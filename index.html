@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="2026年第46周工作周报">
+  <title>2026年第46周工作周报</title>
+  <style>
+    :root {
+      --bg: #f4f6f5;
+      --surface: #ffffff;
+      --surface-2: #eef3f1;
+      --ink: #17221f;
+      --muted: #5d6b66;
+      --line: #d9e1dd;
+      --teal: #0f766e;
+      --teal-soft: #e4f3ef;
+      --amber: #a85513;
+      --amber-soft: #fff1dc;
+      --red: #b42318;
+      --red-soft: #fbe9e7;
+      --blue: #245b87;
+      --blue-soft: #e8f1f8;
+      --shadow: 0 8px 24px rgba(23, 34, 31, 0.06);
+      --radius: 8px;
+      --max: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 78px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 225, 221, 0.9);
+      background: rgba(244, 246, 245, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 64px;
+    }
+
+    .nav-brand {
+      flex: 0 0 auto;
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      width: 100%;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="true"] {
+      color: var(--ink);
+      background: var(--surface);
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 54px 0 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin-bottom: 14px;
+      font-size: clamp(32px, 4.1vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-summary {
+      max-width: 900px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta-row strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 28px;
+    }
+
+    .kpi {
+      min-height: 128px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .kpi-label {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .kpi-value {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .kpi-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 52px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      margin-bottom: 5px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      margin-bottom: 6px;
+      font-size: clamp(24px, 2.6vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .section-note {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .attention {
+      padding: 52px 0;
+      border-top: 1px solid #ecd5b5;
+      border-bottom: 1px solid #ecd5b5;
+      background: var(--amber-soft);
+    }
+
+    .attention .section-kicker {
+      color: var(--amber);
+    }
+
+    .priority {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .p0 {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .p1 {
+      color: var(--amber);
+      background: #fce7c6;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .status-ok {
+      color: var(--teal);
+      background: var(--teal-soft);
+    }
+
+    .status-risk {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .status-pending {
+      color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    .status-info {
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--muted);
+      background: #f8faf9;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover {
+      background: #fbfcfc;
+    }
+
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .subhead {
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .chart-panel {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) 54px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bar-name,
+    .bar-value {
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar-value {
+      text-align: right;
+    }
+
+    .bar-track {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--surface-2);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: var(--teal);
+    }
+
+    .insight-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .insight-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .insight-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .insight-title {
+      display: block;
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+
+    .coefficient-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .coefficient {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .coefficient-label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .coefficient-value {
+      margin: 7px 0 4px;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .coefficient-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .callout-line {
+      margin: 18px 0 0;
+      padding-left: 14px;
+      border-left: 3px solid var(--teal);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .person {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .person-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .person h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .person p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .person p + p {
+      margin-top: 7px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr) 130px 130px;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .action-item {
+      display: contents;
+    }
+
+    .action-item > div {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .action-item:last-child > div {
+      border-bottom: 0;
+    }
+
+    .action-when {
+      color: var(--teal);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .action-owner {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .split-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .coefficient-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 0 8px;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      h1 {
+        letter-spacing: -0.02em;
+      }
+
+      .hero-summary {
+        font-size: 15px;
+      }
+
+      .kpi-grid,
+      .coefficient-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi {
+        min-height: auto;
+      }
+
+      .section,
+      .attention {
+        padding: 38px 0;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .section-note {
+        white-space: normal;
+      }
+
+      .table-wrap {
+        border-radius: 6px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
+
+      .action-item {
+        display: grid;
+        padding: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .action-item:last-child {
+        border-bottom: 0;
+      }
+
+      .action-item > div {
+        padding: 2px 0;
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+      }
+
+      .site-nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 0;
+      }
+
+      .section,
+      .attention {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .kpi,
+      .table-wrap,
+      .chart-panel,
+      .coefficient,
+      .person,
+      .actions {
+        box-shadow: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  
+    .security-note {
+      margin: 0;
+      padding: 14px 16px;
+      border-left: 4px solid #b5472f;
+      background: #fff6f1;
+      color: #7d2f1f;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.7;
+    }
+    .audit-line {
+      color: #64746b;
+      font-size: 0.82rem;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="周报目录">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">W46 工作周报</a>
+      <div class="nav-links">
+        <a href="#overview">摘要</a>
+        <a href="#unfinished">未完成重点</a>
+        <a href="#lifecycle">入离职</a>
+        <a href="#submission">日报合规</a>
+        <a href="#workload">周工时</a>
+        <a href="#monthly-performance">11月绩效</a>
+        <a href="#efficiency">效率校准</a>
+        <a href="#fixed-tasks">固定任务</a>
+        <a href="#review">上期复盘</a>
+        <a href="#next-week">下周动作</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="container hero" id="overview">
+      <p class="eyebrow">Weekly operating review</p>
+      <h1>2026年第46周工作周报</h1>
+      <p class="hero-summary">本周有效提交51/57人日，合规率89.47%。上一周无新入职，蜜璃于11月13日离职；运营组月度客资结果、公司官方账号证据和效率校准样本仍未形成，下周先补结果台账。</p>
+      <div class="meta-row">
+        <span><strong>统计周期</strong> 11月9日至11月13日</span>
+        <span><strong>统计范围</strong> W46在职14人，11/13后13人</span>
+        <span><strong>生成日期</strong> 2026年11月16日</span>
+        <span><a href="https://fcnegd976pzo.feishu.cn/wiki/SbyvwteeFiNiLRkhnABcmmZZnkb?from=from_copylink" target="_blank" rel="noreferrer">查看权威系数库</a></span>
+      </div>
+    </header>
+
+    <div class="container kpi-grid" aria-label="关键指标">
+      <section class="kpi">
+        <div class="kpi-label">日报提交</div>
+        <div class="kpi-value">51 / 57</div>
+        <div class="kpi-note">有效提交人日 / 应报人日</div>
+      </section>
+      <section class="kpi">
+        <div class="kpi-label">日报合规率</div>
+        <div class="kpi-value">89.47%</div>
+        <div class="kpi-note">3人存在未报，合计6人日</div>
+      </section>
+      <section class="kpi">
+        <div class="kpi-label">可核算工时</div>
+        <div class="kpi-value">295.26h</div>
+        <div class="kpi-note">49条日报明确记录时间</div>
+      </section>
+      <section class="kpi">
+        <div class="kpi-label">未完成重点</div>
+        <div class="kpi-value">13项</div>
+        <div class="kpi-note">其中P0事项6项</div>
+      </section>
+    </div>
+
+    <section class="attention" id="unfinished">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Management focus</div>
+            <h2>未完成事项重点</h2>
+            <p class="section-intro">先处理安全、固定任务和日报缺口，再处理数据与效率口径。所有事项都以链接、截图、清单或复查记录收口。</p>
+          </div>
+          <span class="section-note">13项待收口</span>
+        </div>
+        <p class="security-note"><strong>安全优先：</strong>11月11日例会期间接线板冒火花并有轻微糊味，虽已立即断电，但整改与复查证据不足。该事项优先于一般内容任务。</p>
+        <div style="height:16px"></div>
+        <div class="table-wrap"><table><thead><tr><th>优先级</th><th>未完成事项</th><th>责任人</th><th>当前状态</th><th>下周要求</th></tr></thead><tbody><tr><td><span class="priority p0">P0</span></td><td>办公区用电安全整改</td><td>梦幻、行政责任人</td><td>11/11例会时接线板冒火花并出现轻微糊味，已断电；后续只记录“排查隐患”，未看到整改清单、照片和复查结论</td><td>11/17前完成线路、插排、消防设施检查并留档，明确复查人</td></tr>
+<tr><td><span class="priority p0">P0</span></td><td>6个应报人日未提交</td><td>灵汐、布鲁托、渡渡</td><td>W46有效提交51/57，合规率89.47%；灵汐2天、布鲁托2天、渡渡2天未报</td><td>11/17前补齐或书面说明；灵汐长沙出差事实保留，但日报义务不因出差取消</td></tr>
+<tr><td><span class="priority p0">P0</span></td><td>运营组没有可核验的月度结果台账</td><td>灵汐、梦幻、木子、洛米、杰斯</td><td>木子目标70个、洛米目标70个、杰斯目标35个有效客资；截至11/13按时间进度应分别达到33.33、33.33、16.67个，但日报没有已确认有效客资数，CRM/工作包也未提供</td><td>11/17前补齐客户台账、月初工作包和验收人；未确认的KOC、PR、加微信不得算有效客资</td></tr>
+<tr><td><span class="priority p0">P0</span></td><td>小草朋友圈每周3条、至少5张图</td><td>小草、皮卡</td><td>小草记录朋友圈文案和九宫格素材；11/13由皮卡临时接手并完成1条宣发，仍无3条、5图和发布清单</td><td>11/20前提交3条内容、至少5张图的清单、发布截图和验收人</td></tr>
+<tr><td><span class="priority p0">P0</span></td><td>互远AI官方视频号固定发布</td><td>品牌账号责任组、灵汐IP责任组</td><td>花花连续记录的是东湖高新第三方项目账号发布，不等于互远AI官方账号；互远AI官方视频号和灵汐IP视频号均无明确发布链接</td><td>把第三方项目数据和公司官方账号彻底分账；固定账号、负责人、周更链接和验收人</td></tr>
+<tr><td><span class="priority p0">P0</span></td><td>原蜜璃承担的灵汐IP视频2条需重新指派</td><td>灵汐、花花</td><td>蜜璃11/13离职，原IP视频任务没有完成交接、成片链接和验收记录</td><td>11/17前明确新的主责人、逐条状态、交付日期和验收人，不再向离职人员追日报</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>日报任务解析表仍为0</td><td>布鲁托、梦幻</td><td>W46原始日报51条，解析表在11/09至11/13查询结果为0条，周报继续回退人工提取</td><td>11/20前修复触发和日期同步；用W46的51条记录做回放验收</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>内容系数校准未形成新版本</td><td>灵汐、梦幻、小草、木子、洛米</td><td>权威系数库当前为v0.3、35项；11/10后再无新版本记录，也没有3至5个正式校准样本</td><td>先收集公众号、小红书、AI工作流的真实样本，再按版本记录决定是否调整</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>效率校准暂无可结算样本</td><td>全体常规考核人员</td><td>11月要求按“标准工时 vs 实际有效工时”计算效率符合率，但本周多数任务缺唯一编号、逐项实际工时或验收链接；不能仅按日总工时套系数</td><td>11/20前每个已验收任务补任务编号、标准工时、实际有效工时、返工和验收人，形成首批效率样本</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>项目视频唯一编号和返工时长不完整</td><td>花花、皮卡、米咖、渡渡</td><td>花花已使用多条视频编号；米咖11/09被评论要求补编号；渡渡交付仍只有动作描述</td><td>所有视频按“项目-编号-版本”记录，补链接、新做/返工、时长和验收状态</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>高工时与缺时数据待核</td><td>布鲁托、梦幻、米咖</td><td>布鲁托3天均超10小时；梦幻11/12、米咖11/12未写工时</td><td>逐日拆分并确认是否跨日累计；未写工时不自动补8小时</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>小象与OPPO兼容问题未闭环</td><td>布鲁托</td><td>OPPO自动更新和隐私屏黑屏已确认受系统限制；小象浏览小红书仍会卡住</td><td>明确替代方案、能接受的产品边界、自恢复机制和复测场景</td></tr>
+<tr><td><span class="priority p1">P1</span></td><td>员工管理表缺少渡渡</td><td>梦幻</td><td>员工管理表16条记录中没有渡渡，但W46有渡渡日报、请假和绩效任务；人员基本信息表存在乐丹（渡渡）</td><td>11/17前补录员工管理记录并核对入职、职位、合同和绩效状态</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="lifecycle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Lifecycle check</div>
+            <h2>上一周入离职核查</h2>
+            <p class="section-intro">每次周报取数前，从员工管理表核对入职、离职、人员状态和日期；离职覆盖日不进入应报日，原任务必须重新指派。</p>
+          </div>
+          <span class="section-note">员工管理表 revision 157</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>类型</th><th>人员</th><th>日期</th><th>事实</th><th>处理</th></tr></thead><tbody><tr><td>入职</td><td>无</td><td></td><td>上一周无新入职人员</td><td>不影响W46应报日</td></tr>
+<tr><td>离职</td><td>蜜璃（汤思琪）</td><td>2026-11-13</td><td>11/06至11/13连续事假，11/13办理离职</td><td>W46不纳入应报日；业务周报范围13人，员工管理表当前可计12人，因仍缺渡渡记录</td></tr></tbody></table></div>
+        <p class="callout-line"><strong>核查结论：</strong>上周没有新入职，只有蜜璃于11月13日离职。她的连续事假覆盖W46全部工作日，因此本期应报日为0；员工管理表已回填其离职状态和日期，但表内仍缺渡渡，当前只能直接核对12名员工。</p>
+      </div>
+    </section>
+
+    <section class="section" id="submission">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Daily report</div>
+            <h2>日报提交与合规</h2>
+            <p class="section-intro">按唯一人员和唯一日期统计。已批准全假、长期病假、连续事假和离职覆盖日从应报日中扣除；部分请假、已审批外出和已确认出差仍计入应报日。</p>
+          </div>
+          <span class="section-note">2条空人员日报均经历史核实属于渡渡</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>人员</th><th>分组</th><th class="num">应报日</th><th class="num">原始条数</th><th class="num">有效提交日</th><th>缺报日</th><th class="num">合规率</th><th>状态</th><th>异常说明</th></tr></thead><tbody><tr><td>灵汐</td><td>管理层</td><td class="num">5</td><td class="num">3</td><td class="num">3</td><td>11/12、11/13</td><td class="num">60.00%</td><td><span class="status status-risk">缺报</span></td><td>已确认11/12至11/13长沙出差；出差期间仍应提交日报，两天未报</td></tr>
+<tr><td>叮当</td><td>管理层</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/10、11/11、11/13均有招聘触达记录</td></tr>
+<tr><td>布鲁托</td><td>管理层</td><td class="num">5</td><td class="num">3</td><td class="num">3</td><td>11/09、11/10</td><td class="num">60.00%</td><td><span class="status status-risk">缺报</span></td><td>11/11至11/13单日记录10.25至13.50小时，负荷集中</td></tr>
+<tr><td>花花</td><td>项目与OPS</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/10黄陂拍摄外出已审批；日报已使用多条视频编号</td></tr>
+<tr><td>梦幻</td><td>项目与OPS</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/12未写工时；11/11发现办公区接线板冒火花</td></tr>
+<tr><td>皮卡</td><td>交付执行</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/13两条为不同工作内容；第一条归入11/12补报，第二条计11/13，不是重复</td></tr>
+<tr><td>米咖</td><td>交付执行</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/12未写工时；11/09评论要求补视频编号</td></tr>
+<tr><td>小草</td><td>交付执行</td><td class="num">4</td><td class="num">4</td><td class="num">4</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/12下午事假3小时、11/13全天事假均已审批</td></tr>
+<tr><td>渡渡</td><td>交付执行</td><td class="num">4</td><td class="num">2</td><td class="num">2</td><td>11/10、11/12</td><td class="num">50.00%</td><td><span class="status status-risk">缺报</span></td><td>11/09空人员日报经记录历史核实属于渡渡；11/13事假已审批</td></tr>
+<tr><td>蜜璃</td><td>品牌组（离职）</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td>不适用</td><td class="num">不适用</td><td><span class="status status-info">离职</span></td><td>11/06至11/13连续事假，11/13办理离职；W46不纳入应报日，后续不进入周报</td></tr>
+<tr><td>木子</td><td>运营组</td><td class="num">4</td><td class="num">4</td><td class="num">4</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/10事假已审批；11/02补报已回填</td></tr>
+<tr><td>洛米</td><td>运营组</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/02补报已回填；本周完成6个账号人设卡迭代</td></tr>
+<tr><td>杰斯</td><td>运营组</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td>无</td><td class="num">100.00%</td><td><span class="status status-ok">合规</span></td><td>11/11评论要求养号和截流不能停，后续日报未再记录截流</td></tr>
+<tr><td>菲菲</td><td>销售增长</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td>不适用</td><td class="num">不适用</td><td><span class="status status-info">病假</span></td><td>已批准病假覆盖2026/09/15至2026/12/15</td></tr></tbody></table></div>
+        <p class="callout-line"><strong>事实核对：</strong>蜜璃11/06至11/13连续事假并于11/13离职；木子11/10、小草11/12下午与11/13、渡渡11/13均为已通过事假；花花和皮卡11/10外出已审批；灵汐11/12至11/13长沙出差已由管理层确认。菲菲长期病假覆盖9/15至12/15。</p>
+        <p class="callout-line"><strong>数据问题：</strong>皮卡11/13两条工作内容不同，第一条作为11/12补报，第二条计11/13，不是重复；梦幻和米咖11/12未写工时；木子、洛米按员工管理表归入运营组。</p>
+      </div>
+    </section>
+
+    <section class="section" id="workload">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Time and throughput</div>
+            <h2>一周工作量与工时合理性</h2>
+            <p class="section-intro">工时来自日报明确写出的时间，不自动估算。工时占比只表示时间投入，不是产出价值或绩效排名。</p>
+          </div>
+          <span class="section-note">明确工时合计295.26小时</span>
+        </div>
+        <div class="split-layout">
+          <div class="chart-panel">
+            <div class="subhead">全员工时占比</div>
+            <div class="bar-list" aria-label="全员工时占比条形图"><div class="bar-row"><span class="bar-name">布鲁托</span><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><span class="bar-value">11.60%</span></div>
+<div class="bar-row"><span class="bar-name">杰斯</span><div class="bar-track"><div class="bar-fill" style="width:90.5%"></div></div><span class="bar-value">10.50%</span></div>
+<div class="bar-row"><span class="bar-name">洛米</span><div class="bar-track"><div class="bar-fill" style="width:86.1%"></div></div><span class="bar-value">9.99%</span></div>
+<div class="bar-row"><span class="bar-name">皮卡</span><div class="bar-track"><div class="bar-fill" style="width:83.2%"></div></div><span class="bar-value">9.65%</span></div>
+<div class="bar-row"><span class="bar-name">花花</span><div class="bar-track"><div class="bar-fill" style="width:77.4%"></div></div><span class="bar-value">8.98%</span></div>
+<div class="bar-row"><span class="bar-name">叮当</span><div class="bar-track"><div class="bar-fill" style="width:76.1%"></div></div><span class="bar-value">8.83%</span></div>
+<div class="bar-row"><span class="bar-name">木子</span><div class="bar-track"><div class="bar-fill" style="width:74.2%"></div></div><span class="bar-value">8.61%</span></div>
+<div class="bar-row"><span class="bar-name">梦幻</span><div class="bar-track"><div class="bar-fill" style="width:68.6%"></div></div><span class="bar-value">7.96%</span></div>
+<div class="bar-row"><span class="bar-name">米咖</span><div class="bar-track"><div class="bar-fill" style="width:62.8%"></div></div><span class="bar-value">7.28%</span></div>
+<div class="bar-row"><span class="bar-name">灵汐</span><div class="bar-track"><div class="bar-fill" style="width:60.4%"></div></div><span class="bar-value">7.00%</span></div>
+<div class="bar-row"><span class="bar-name">小草</span><div class="bar-track"><div class="bar-fill" style="width:56.4%"></div></div><span class="bar-value">6.55%</span></div>
+<div class="bar-row"><span class="bar-name">渡渡</span><div class="bar-track"><div class="bar-fill" style="width:26.3%"></div></div><span class="bar-value">3.05%</span></div></div>
+            <p class="callout-line">全员可核算人日均值5.79小时。蜜璃与菲菲无本周工时，不进入占比。</p>
+          </div>
+          <div>
+            <div class="subhead">需要直接判断的工时</div>
+            <ul class="insight-list">
+              <li><span class="insight-title">布鲁托：高风险集中</span>三天记录10.25至13.50小时，需确认真实加班、多日合并或重复计时。</li>
+              <li><span class="insight-title">皮卡：补报已归位</span>11/13两条内容不同，第一条作为11/12补报，第二条计11/13，不再算同日重复。</li>
+              <li><span class="insight-title">梦幻、米咖：记录缺失</span>11/12有明确工作，但没有写任何工时。</li>
+              <li><span class="insight-title">花花：产出证据较强</span>多条视频编号和发布记录可见，但账号归属仍需写清。</li>
+              <li><span class="insight-title">杰斯：结果指标不足</span>5天均有动作，截流、触达和有效客资没有同步记录。</li>
+            </ul>
+          </div>
+        </div>
+        <div style="height:24px"></div>
+        <div class="table-wrap"><table><thead><tr><th>姓名</th><th class="num">可核算工时</th><th class="num">工作量占比</th><th>主要工作</th><th>本周可验收结果或进展</th></tr></thead><tbody><tr><td>灵汐</td><td class="num">20.67</td><td class="num">7.00%</td><td>招聘面试、绩效方案与月报、商务接待、未来岛叙事、案例拍摄、直播优化</td><td>完成绩效方案优化和未来岛叙事更新，参与案例视频拍摄与多场商务沟通；周内开始搭建个人IP内容仓库</td></tr>
+<tr><td>叮当</td><td class="num">26.08</td><td class="num">8.83%</td><td>招聘、商务接待、工资表自动化、财务核算、离职办理、项目回款、EVO方法</td><td>工资表完成交付和发放，招聘持续触达，东湖高新第二期项目款推进；茅台报价进入最后确认</td></tr>
+<tr><td>布鲁托</td><td class="num">34.25</td><td class="num">11.60%</td><td>小象客户端、象群任务、DexBuddy插件、小红书自动养号训练、服务器部署</td><td>完成小象更新、连续执行、状态遥测与多项稳定性修复；DexBuddy插件页面和充值提示完成，新服务器完成部署</td></tr>
+<tr><td>花花</td><td class="num">26.52</td><td class="num">8.98%</td><td>东湖高新视频发布、脚本、视频审核、预算、排期、客户留资表和项目周数据</td><td>连续发布视频号和图文内容，交付多份企业访谈、双虚拟人与AI特效脚本，完成11月与12月排期和季度运营总结</td></tr>
+<tr><td>梦幻</td><td class="num">23.50</td><td class="num">7.96%</td><td>固定资产、工牌、电话卡、离职资料、行政采购、报销、DexBuddy、EVO流程和安全隐患排查</td><td>完成17部工作手机盘点、员工信息表和工牌整理，跑通站会录音与报销数字化流程，并持续排查办公区电源隐患</td></tr>
+<tr><td>皮卡</td><td class="num">28.50</td><td class="num">9.65%</td><td>木兰智慧谷拍摄、品牌视频、视频审核、脚本方案、带教、模板与直播间支持</td><td>完成品牌视频《AI拼的不是估值，是离人更近》并交付，完成美业视频初版、三条建行短视频方案和MG动画自动化测试</td></tr>
+<tr><td>米咖</td><td class="num">21.50</td><td class="num">7.28%</td><td>郑店、汉阳、黄陂项目视频修改与制作，长视频和短视频交付</td><td>完成黄陂115长视频和短视频，持续修改郑店、汉阳与黄陂口播视频；部分日报已写项目编号，尚未实现全部唯一编号</td></tr>
+<tr><td>小草</td><td class="num">19.33</td><td class="num">6.55%</td><td>公众号文案、排版与发布，视频封面、朋友圈、小红书养号、EVO工作区</td><td>完成并发布公众号文章，交付多份封面和视觉物料，建立一条朋友圈内容与EVO工作区流程；11/13工作由皮卡临时承接</td></tr>
+<tr><td>渡渡</td><td class="num">9.00</td><td class="num">3.05%</td><td>视频修改、工具探索、视频号修剪、公众号EVO流程和视频工作流</td><td>完成1条修改视频并建立公众号EVO流程；交付证据只有任务描述，缺少视频链接、唯一编号和后续验收</td></tr>
+<tr><td>蜜璃</td><td class="num">0.00</td><td class="num">不适用</td><td>离职交接与历史任务移交</td><td>11/13已完成离职手续；原承担的灵汐IP视频任务需要重新指派，不能继续挂在离职人员名下</td></tr>
+<tr><td>木子</td><td class="num">25.42</td><td class="num">8.61%</td><td>小红书账号分层、图文发布、养号、直播准备与复盘、电竞模板、AI图文工具沟通</td><td>持续运营素人及品牌小红书账号，完成直播复盘表和电竞美工模板测试，向合作方演示小红书智能图文工具</td></tr>
+<tr><td>洛米</td><td class="num">29.49</td><td class="num">9.99%</td><td>6个小红书账号定位、内容制作、行业资料、个人IP访谈、上海建行、PR与KOC筛选</td><td>完成多篇小红书内容，筛选11位KOC并整理产品信息；上海建行合作线索和内容准备形成可继续跟进的名单</td></tr>
+<tr><td>杰斯</td><td class="num">31.00</td><td class="num">10.50%</td><td>小红书截流、账号养号、直播间执行、口播拍摄与剪辑、设备搭建</td><td>连续5天投入账号养号和直播支持，完成多条口播拍摄剪辑；有效客资数量、触达量和转化结果仍未记录</td></tr>
+<tr><td>菲菲</td><td class="num">0.00</td><td class="num">不适用</td><td>不适用</td><td>全周病假，不进入本周常规工作评价</td></tr></tbody></table></div>
+        <div style="height:18px"></div>
+        <div class="table-wrap"><table><thead><tr><th>对象</th><th>日报证据</th><th>当前判断</th><th>需要补充</th><th>下周动作</th></tr></thead><tbody><tr><td>布鲁托</td><td>11/11 13.50h、11/12 10.50h、11/13 10.25h</td><td>连续3天高工时，且周一、周二无日报</td><td>确认是否为真实加班、是否把多日任务合并到当天</td><td>按日期拆分，补系统限制项和服务器部署的实际耗时</td></tr>
+<tr><td>梦幻</td><td>11/12未写工时</td><td>有内容、发布、EVO和行政工作，但无法核对投入</td><td>不属于异常判断，属于记录缺失</td><td>补实际工时；至少写任务级耗时和日合计</td></tr>
+<tr><td>米咖</td><td>11/12未写工时</td><td>完成长视频并制作短视频20%，但无法核对投入</td><td>不能仅凭任务结果推算工时</td><td>补长视频与短视频实际耗时，并写视频编号</td></tr>
+<tr><td>灵汐、梦幻</td><td>多条会议、沟通、审核记录</td><td>单条通常有时长，但部分任务只写动作</td><td>当前可判断记录完整性，不能仅凭时长判断管理效率</td><td>关键会议补议程、决策和责任人；审核补结论和截止时间</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="monthly-performance">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Monthly performance</div>
+            <h2>11月绩效任务进度</h2>
+            <p class="section-intro">截至11月13日，按11月绩效方案展示月度目标、已发生进展和AI化信息；月末未到，不提前形成最终绩效分和发放系数。</p>
+          </div>
+          <span class="section-note">10个工作日 / 全月21个工作日</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>姓名</th><th>分组</th><th>11月模板</th><th>月度目标</th><th>截至11/13进展</th><th>AI化</th><th>当前判断</th><th>下周验证</th></tr></thead><tbody><tr><td>灵汐</td><td>管理层</td><td>管理层认定</td><td>4至5个母题、4次周会、月度经营复盘、重点客户与产品内容检查</td><td>本月日报8/10；11/12至11/13已确认长沙出差；商务接待、绩效方案、案例拍摄和项目协同有记录</td><td>信息项80分；不进入常规KPI</td><td>进行中</td><td>补长沙出差日报；月末提交经营结果与组织效率复盘</td></tr>
+<tr><td>叮当</td><td>管理层</td><td>管理层认定</td><td>周度财务更新、月结、现金流与风险清单、招聘和核心资源</td><td>本月日报10/10；工资表交付、招聘持续触达、第二期项目款推进</td><td>信息项100分；不进入常规KPI</td><td>进行中</td><td>月末补齐财务、招聘、商务和报价的可验收结果</td></tr>
+<tr><td>布鲁托</td><td>管理层</td><td>管理层认定</td><td>技术里程碑、平台稳定、自动化节省、SLA和知识转移</td><td>本月日报4/10；小象、DexBuddy、自动养号和服务器部署均有明确技术进展</td><td>信息项40分；不进入常规KPI</td><td>记录风险</td><td>恢复每日日报；技术里程碑补验收人、复测结果和效率节省说明</td></tr>
+<tr><td>梦幻</td><td>项目与OPS</td><td>OPS 90/10</td><td>任务闭环率≥90%、周报数据及时、会议闭环、AI流程稳定、风险24小时内升级</td><td>W46日报5/5；完成行政、资产、工牌、报销数字化和会议支持；安全隐患仍缺闭环记录</td><td>100分</td><td>进行中</td><td>建立任务闭环率和风险台账；补齐用电安全复查</td></tr>
+<tr><td>花花</td><td>项目与OPS</td><td>项目经理45+45+10</td><td>直接成本≤35%、全成本率≤55%、月度P&amp;L、里程碑准时率≥95%、回款节点</td><td>连续交付东湖高新周数据、排期、脚本、发布和审核；本项目为第三方项目，不代表互远AI官方账号。成本和回款需月末确认</td><td>100分</td><td>月末计算</td><td>补齐项目P&amp;L输入、回款节点和里程碑准时率</td></tr>
+<tr><td>皮卡</td><td>品牌组</td><td>品牌组90/10</td><td>复杂视频10条、单条≤4.5小时、每周分析培训约3小时、至少1项模板或标准</td><td>日报明确完成品牌视频1条和公司宣讲视频1条；美业视频初版待反馈；拍摄日会下调复杂视频目标</td><td>100分</td><td>需加速</td><td>按拍摄天数重算目标；每条复杂视频补编号、实际工时、验收链接</td></tr>
+<tr><td>米咖</td><td>品牌组</td><td>品牌组90/10</td><td>东湖高新常规视频16条；单条平均≤4.21875小时，管理目标≤4小时</td><td>日报明确完成7条；按10/21时间进度约应完成7.62条，进度接近，但正式当量必须以已发布视频库核对</td><td>100分</td><td>进度接近</td><td>核对已发布视频库；补逐条制作、返工和实际工时</td></tr>
+<tr><td>小草</td><td>品牌组</td><td>品牌组90/10</td><td>按分配完成内部IP账号、作图、视频和新媒体支持，质量与发布审核合格</td><td>本月日报9/9；公众号文章已发布，完成多份封面、插图和朋友圈物料；朋友圈3条/5图尚未形成完整清单</td><td>100分</td><td>进行中</td><td>补齐朋友圈3条/5图证据；逐项记录公众号写作、配图、排版耗时</td></tr>
+<tr><td>渡渡</td><td>品牌组</td><td>品牌组90/10</td><td>完成分配AI虚拟人、活动视频和交付支持；任务补类型、时长、唯一编号和验收</td><td>本月日报5/8；有数字人、视频修改、原文视频和Evo工作流记录；多数缺链接、验收和明确任务类型</td><td>62.5分</td><td>明显落后</td><td>补齐日报；每个视频补唯一编号、类型、实际工时、链接和验收状态</td></tr>
+<tr><td>木子</td><td>运营组</td><td>个人任务70%+团队10%+AI10%+质量10%</td><td>11月个人有效客资70个；团队任务完成率≥90%</td><td>截至11/13按时间进度个人应约33.33个；当前0个已确认有效客资，有1次添加客资微信待核；内容、直播和账号运营动作持续</td><td>100分</td><td>不能判定达标</td><td>建立客户台账和团队工作包；补齐有效客资证据、验收人和团队任务标准工时</td></tr>
+<tr><td>洛米</td><td>运营组</td><td>运营90/10</td><td>11月有效客资70个</td><td>截至11/13按时间进度应约33.33个；当前0个已确认有效客资；11位KOC和9位PR属于候选资源，不是有效客资</td><td>100分</td><td>不能判定达标</td><td>把KOC/PR资源转成跟进台账；每日记录有效客资、成交、异常和下一步</td></tr>
+<tr><td>杰斯</td><td>运营组</td><td>运营90/10</td><td>11月有效客资35个</td><td>截至11/13按时间进度应约16.67个；当前0个已确认有效客资；截流只在11/02至11/09部分日报出现</td><td>90分</td><td>明显落后</td><td>补齐11/05日报；恢复每日截流台账，记录触达、有效客资和账号异常</td></tr>
+<tr><td>蜜璃</td><td>品牌组（离职）</td><td>离职专项</td><td>不再形成11月后续任务；完成离职交接</td><td>11/06至11/13事假，11/13离职；原灵汐IP视频任务未交接</td><td>历史信息项75分</td><td>不适用</td><td>只保留历史记录；由新责任人接手未完成任务</td></tr>
+<tr><td>菲菲</td><td>运营组</td><td>长期病假</td><td>不进入常规月度考核</td><td>已批准病假覆盖2026/09/15至2026/12/15</td><td>不适用</td><td>不适用</td><td>返岗前确认工作安排</td></tr></tbody></table></div>
+        <p class="callout-line"><strong>计算边界：</strong>常规岗位为“业务/任务90% + AI化10%”；运营B轨为“任务80% + AI化10% +质量10%”；木子为“个人任务70% + 团队任务10% + AI化10% +质量10%”。AI化默认使用有效日报日÷应报日。</p>
+        <div style="height:24px"></div>
+        <div class="subhead">运营组任务达标判断</div>
+        <div class="table-wrap"><table><thead><tr><th>人员</th><th>11月目标</th><th>按时间进度应达到</th><th>当前可核验结果</th><th>判断</th><th>必须补齐</th></tr></thead><tbody><tr><td>木子</td><td>有效客资70个；团队任务完成率≥90%；团队管理权重10%</td><td>个人有效客资33.33个；团队计划与验收台账必须同步建立</td><td>0个已确认；1次添加客资微信待核；已发布多篇内容并完成直播支持</td><td>未达到可核验达标条件</td><td>客户台账、团队工作包、验收人、标准工时</td></tr>
+<tr><td>洛米</td><td>有效客资70个</td><td>33.33个</td><td>0个已确认；11位KOC、9位PR为候选名单，不计有效客资</td><td>未达到可核验达标条件</td><td>逐条核验联系方式、需求、同意跟进和下一步</td></tr>
+<tr><td>杰斯</td><td>有效客资35个</td><td>16.67个</td><td>0个已确认；有截流动作但无触达和客资数量</td><td>明显落后</td><td>恢复每日截流和有效客资数据，不接受只写在线时长</td></tr></tbody></table></div>
+        <p class="security-note"><strong>运营组结论：</strong>截至11/13，木子、洛米、杰斯均未达到“可确认达标”条件，杰斯的过程动作和台账缺口最明显。该判断不代表实际客资一定为0，而是现有日报和台账无法证明。木子的团队任务完成率也因缺少月初工作包、计划标准工时和验收台账而无法计算，属于管理条件缺失。</p>
+      </div>
+    </section>
+
+    <section class="section" id="efficiency">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Efficiency calibration</div>
+            <h2>工作效率校准与系数状态</h2>
+            <p class="section-intro">11月要求所有常规考核任务匹配标准工时，并用“标准工时 vs 实际有效工时”计算效率符合率。当前可用完整样本为0个，原因是任务编号、逐项工时和验收未成组出现，并非效率已经为0。</p>
+          </div>
+          <span class="section-note">v0.3 · revision 86</span>
+        </div>
+        <p class="security-note"><strong>公式：</strong>效率符合率 = Σ效率达标项标准工时 ÷ Σ全部有效任务标准工时 × 100%。任务完成率和效率符合率分开计算，效率系数只乘一次原始总分，不能按日总工时直接套视频系数。</p>
+        <div style="height:16px"></div>
+        <div class="table-wrap"><table><thead><tr><th>任务类型</th><th>涉及人员</th><th>当前数据</th><th>能否计算</th><th>补证要求</th></tr></thead><tbody><tr><td>项目视频/拍摄</td><td>花花、皮卡、米咖、渡渡</td><td>部分任务有视频编号或实际时长，但多为日汇总，未统一到唯一任务</td><td>暂无可直接计算的完整效率样本</td><td>每条任务补唯一编号、标准工时、实际有效工时、返工和验收</td></tr>
+<tr><td>运营内容/账号</td><td>木子、洛米、杰斯</td><td>选题、制作、发布和养号有工时，但验收状态和有效客资结果未形成台账</td><td>任务完成率和效率符合率均不完整</td><td>按v0.3图文标准计算，客资只作为结果指标</td></tr>
+<tr><td>公众号/视觉</td><td>小草</td><td>写作、排版、配图和发布时间有记录</td><td>可开始按标准比时，但缺任务编号和统一验收状态</td><td>把每篇公众号拆成写作、配图、排版三个任务编号</td></tr>
+<tr><td>AI/EVO工作流</td><td>梦幻、洛米、渡渡、皮卡、布鲁托</td><td>有学习和实际使用记录，尚无标准输入、节省时间和采用范围</td><td>暂不能进入权威系数</td><td>先收集3至5个重复场景，再评估标准工时</td></tr></tbody></table></div>
+        <div class="coefficient-grid">
+          <article class="coefficient"><div class="coefficient-label">公众号写作</div><div class="coefficient-value">1.6h</div><div class="coefficient-note">正文撰写，不含配图与排版</div></article>
+          <article class="coefficient"><div class="coefficient-label">公众号配图</div><div class="coefficient-value">0.96h</div><div class="coefficient-note">封面与正文配图</div></article>
+          <article class="coefficient"><div class="coefficient-label">公众号排版</div><div class="coefficient-value">1.6h</div><div class="coefficient-note">含发布前校验</div></article>
+          <article class="coefficient"><div class="coefficient-label">小红书选题</div><div class="coefficient-value">0.48h</div><div class="coefficient-note">选题、搜索与角度确认</div></article>
+          <article class="coefficient"><div class="coefficient-label">小红书图文制作</div><div class="coefficient-value">0.96h</div><div class="coefficient-note">文案、图片与版式</div></article>
+          <article class="coefficient"><div class="coefficient-label">团队任务跟踪</div><div class="coefficient-value">0.48h</div><div class="coefficient-note">每个工作日，含验收与升级</div></article>
+        </div>
+        <div style="height:18px"></div>
+        <div class="table-wrap"><table><thead><tr><th>工作事项</th><th>本周出现情况</th><th>系数表状态</th><th>当前规则或建议</th></tr></thead><tbody><tr><td>视频拍摄、脚本、剪辑、发布</td><td>本周高频：拍摄、长视频、短视频、口播、企业访谈、趣味视频</td><td>已有视频类型与脚本标准</td><td>按唯一视频编号执行；返工超过30分钟单独记录</td></tr>
+<tr><td>公众号写作、配图、排版</td><td>小草本周完成文案、视觉、排版和发布</td><td>v0.3已有拆分标准</td><td>写作、配图、排版分别计量，不把发布重复计为工时</td></tr>
+<tr><td>小红书选题、图文制作、调研</td><td>木子、洛米、梦幻持续产出图文并发布</td><td>v0.3已有拆分标准</td><td>记录选题、制作、发布和有效客资，不以养号时长代替结果</td></tr>
+<tr><td>账号养号、截流、私信</td><td>木子、洛米、杰斯、布鲁托均有涉及</td><td>不设固定交付工时</td><td>必须同时记录账号数、触达、有效客资、异常和转化</td></tr>
+<tr><td>DexBuddy、Codex EVO、自动化工作流</td><td>梦幻、灵汐、洛米、小草、渡渡、布鲁托、皮卡本周均有应用</td><td>尚未进入权威系数表</td><td>先收集3至5个重复场景，记录输入、输出、节省时间和返工，再评估系数</td></tr>
+<tr><td>视频修改与返工</td><td>米咖、皮卡、花花、渡渡多日涉及</td><td>视频类型有标准，返工边界仍不完整</td><td>30分钟内视为标准内含；超时需记录原因、轮次、时长和唯一编号</td></tr></tbody></table></div>
+        <p class="callout-line"><strong>本周动作：</strong>不写入没有样本支撑的新系数。账号养号、截流和私信以有效客资评价；DexBuddy、Codex EVO和自动化工作流先收集3至5个重复场景，再走权威库版本更新。</p>
+      </div>
+    </section>
+
+    <section class="section" id="fixed-tasks">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Standing requirements</div>
+            <h2>会议固定任务</h2>
+            <p class="section-intro">固定任务必须落到具体账号、具体负责人、可打开链接、图片清单和验收人。</p>
+          </div>
+          <span class="section-note">5项固定任务 · 1项确认完成</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>固定任务</th><th>周期目标</th><th>主责或关联人</th><th>本周日报证据</th><th>本周结论</th></tr></thead><tbody><tr><td>互远AI视频号</td><td>每周1条</td><td>品牌账号责任组</td><td>花花本周记录的是东湖高新第三方项目视频号和图文发布，不是互远AI官方账号</td><td><span class="status status-risk">未完成，第三方项目发布不得替代公司官方账号</span></td></tr>
+<tr><td>灵汐IP视频号</td><td>每周1条</td><td>灵汐IP责任组</td><td>皮卡完成品牌视频并计划次日发布；未见灵汐IP账号发布链接</td><td><span class="status status-risk">未确认完成</span></td></tr>
+<tr><td>公众号</td><td>每周1篇</td><td>小草</td><td>11/09完成文案、封面、排版并发布；11/10继续排版和工具制作</td><td><span class="status status-ok">至少完成1篇</span></td></tr>
+<tr><td>小草朋友圈内容</td><td>每周3条，至少5张图</td><td>小草，皮卡临时承接</td><td>小草完成文案和九宫格素材；11/13皮卡完成1条宣发</td><td><span class="status status-risk">数量与图片清单未确认</span></td></tr>
+<tr><td>原蜜璃灵汐IP视频</td><td>重新指派后按新周期执行</td><td>待指派</td><td>蜜璃11/13离职，未留下成片、链接和正式交接记录</td><td><span class="status status-pending">不能继续挂在离职人员名下，11/17前完成交接</span></td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="issues-review">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Team patterns</div>
+            <h2>团队共性问题</h2>
+            <p class="section-intro">问题按数据质量、业务证据、账号运营、高负荷和行政安全归类。</p>
+          </div>
+        </div>
+        <ul class="insight-list"><li>日报纪律仍是第一位的数据风险。W46缺6个应报人日，且W45仍有6个在职人员日未补；月底再追已经无法还原真实工作分布。</li><li>日报结构不足以支持自动核算。解析表连续两周为0，两个日报没有工时，视频唯一编号和逐项验收仍未统一。</li><li>东湖高新是第三方项目，不等于互远AI官方账号。项目发布数据必须和公司品牌账号分账，不能互相充当完成证据。</li><li>运营组目标已经进入结果阶段。木子、洛米、杰斯的本月目标分别是70、70、35个有效客资，但客户台账没有进入周报数据链，当前0个可核验值不能等同于0个实际客资。</li><li>高工时集中在少数技术任务。布鲁托3天均超过10小时，说明系统修复、插件开发和小红书自动化仍在争抢同一段有限时间，需要明确取舍。</li><li>行政安全事项已经出现真实风险。接线板冒火花不能只记录为“已排查”，必须有断电、更换、复查和责任人闭环。</li><li>效率校准的数据条件尚未建立。没有唯一任务编号、逐项实际工时和验收结果，就无法计算标准工时与有效工时的比值。</li><li>入离职必须进入周报取数主链。蜜璃11/6起连续事假、11/13离职，旧算法差点把她继续算作在职缺报人员；员工管理表已回填离职状态和日期。</li><li>员工管理表仍缺渡渡。周报能从日报和请假记录识别渡渡，但入离职主表没有对应记录，人员事实尚未达到可自动核对的完整性。</li></ul>
+      </div>
+    </section>
+
+    <section class="section" id="review">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Previous actions</div>
+            <h2>上周动作复盘</h2>
+            <p class="section-intro">W45已有木子、洛米11/02补报；扣除请假后应报58人日，当前51人日，仍有7个人日未补，其中6个属于当前在职人员，1个属于已离职的蜜璃历史记录。</p>
+          </div>
+          <span class="section-note">2项未完成 · 4项部分完成</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>W45动作</th><th>状态</th><th>本周核验</th><th>下一步</th></tr></thead><tbody><tr><td>补齐W45缺报</td><td><span class="status status-pending">部分完成</span></td><td>木子、洛米已补11/02日报，W45当前为51条；扣除请假后应报58人日，仍有布鲁托4天、渡渡1天、蜜璃1天、杰斯1天，共7个人日未补</td><td>其中蜜璃1天作为离职历史记录留存，其余6个在职人员日11/17前补齐或说明</td></tr>
+<tr><td>补齐梦幻11/02至11/06请假申请</td><td><span class="status status-risk">未完成</span></td><td>请假审批查询中仍未找到对应申请，梦幻已回岗并连续提交5天日报</td><td>补审批或保留书面确认，避免历史口径冲突</td></tr>
+<tr><td>用3至5个样本校准新增内容系数</td><td><span class="status status-risk">未完成</span></td><td>系数库仍为v0.3、35项，11/10后无新版本记录；本周主要完成使用，没有形成正式校准样本</td><td>W47前至少提交6类样本的工时对照</td></tr>
+<tr><td>建立会议固定任务台账</td><td><span class="status status-pending">部分完成</span></td><td>日报中已能看到公众号、视频号和IP视频的连续动作，但账号、负责人和验收证据仍未统一</td><td>形成一张固定任务表，字段固定到账号、链接、图片和验收人</td></tr>
+<tr><td>修复日报解析表未生成</td><td><span class="status status-risk">未完成</span></td><td>W46解析记录仍为0，人工汇总继续承担全部解析工作</td><td>必须用51条原始日报做回放验收</td></tr>
+<tr><td>建立项目唯一编号和链接规范</td><td><span class="status status-pending">部分完成</span></td><td>花花已连续使用视频编号，米咖部分记录有编号；评论仍要求补编号，渡渡仍未提供链接</td><td>从本周开始按项目编号冻结新交付</td></tr>
+<tr><td>修正账号安全与养号记录</td><td><span class="status status-pending">部分完成</span></td><td>账号数、养号和直播执行有记录，但有效客资仍缺；杰斯11/11被提醒养号和截流不能停，后续日报未再写截流</td><td>统一账号、触达、有效客资和异常台账</td></tr>
+<tr><td>关闭已识别阻塞</td><td><span class="status status-pending">部分完成</span></td><td>品牌视频和部分脚本已交付；OPPO系统限制、小象浏览卡顿和办公用电风险仍未闭环</td><td>所有阻塞写明责任人、截止时间和复测结果</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section" id="next-week">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Next actions</div>
+            <h2>下周重点动作</h2>
+            <p class="section-intro">先补安全、日报、运营结果台账和固定任务，再把任务编号、逐项工时与验收记录接成可计算的效率样本。</p>
+          </div>
+          <span class="section-note">截止时间：11月17日至11月20日</span>
+        </div>
+        <div class="actions" role="table" aria-label="下周重点动作"><div class="action-item" role="row">
+      <div class="action-when" role="cell">11/17</div>
+      <div role="cell">完成办公区用电、插排和消防设施检查并留档</div>
+      <div class="action-owner" role="cell">梦幻、行政责任人</div>
+      <div class="action-owner" role="cell">检查清单、照片、复查结论</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/17</div>
+      <div role="cell">补齐W46未报6人日与W45剩余在职人员6人日</div>
+      <div class="action-owner" role="cell">灵汐、布鲁托、渡渡、杰斯</div>
+      <div class="action-owner" role="cell">补报记录或书面说明</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/17</div>
+      <div role="cell">建立运营组客户台账、月初工作包和验收人</div>
+      <div class="action-owner" role="cell">灵汐、梦幻、木子、洛米、杰斯</div>
+      <div class="action-owner" role="cell">有效客资、触达、成交、异常和验收记录</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/17</div>
+      <div role="cell">完成原蜜璃灵汐IP视频任务重新指派</div>
+      <div class="action-owner" role="cell">灵汐、花花</div>
+      <div class="action-owner" role="cell">逐条状态、负责人、链接、交付日期和验收人</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/18</div>
+      <div role="cell">确认布鲁托高工时是否为真实加班或跨日累计</div>
+      <div class="action-owner" role="cell">布鲁托</div>
+      <div class="action-owner" role="cell">逐日工时拆分和交付链接</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/20</div>
+      <div role="cell">完成互远AI视频号、灵汐IP视频号、公众号和小草朋友圈证据</div>
+      <div class="action-owner" role="cell">品牌组、灵汐IP组、小草、皮卡</div>
+      <div class="action-owner" role="cell">账号、链接、图片、验收人</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/20</div>
+      <div role="cell">修复日报解析表并回放W46的51条日报</div>
+      <div class="action-owner" role="cell">布鲁托、梦幻</div>
+      <div class="action-owner" role="cell">解析记录、字段完整率</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/20</div>
+      <div role="cell">建立项目视频唯一编号、版本和返工记录</div>
+      <div class="action-owner" role="cell">花花、皮卡、米咖、渡渡</div>
+      <div class="action-owner" role="cell">项目交付清单</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/20</div>
+      <div role="cell">为首批已验收任务补齐效率校准样本</div>
+      <div class="action-owner" role="cell">全体常规考核人员</div>
+      <div class="action-owner" role="cell">任务编号、标准工时、实际有效工时、返工和验收</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/20</div>
+      <div role="cell">恢复账号触达、有效客资和异常的每日台账</div>
+      <div class="action-owner" role="cell">木子、洛米、杰斯</div>
+      <div class="action-owner" role="cell">触达、有效客资、账号异常、转化结果</div>
+    </div>
+<div class="action-item" role="row">
+      <div class="action-when" role="cell">11/17</div>
+      <div role="cell">补录渡渡的员工管理记录并核对员工状态</div>
+      <div class="action-owner" role="cell">梦幻</div>
+      <div class="action-owner" role="cell">员工管理记录回读结果</div>
+    </div></div>
+        <p class="audit-line">数据核验：W46原始日报51条；有效提交51人日；应报57人日；11月截至11/13有效提交102/115人日；员工管理表已核查上周无入职、蜜璃11/13离职。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      数据来源：飞书工作日报中心、员工管理表、请假与外出审批、11月绩效方案。系数口径以 <a href="https://fcnegd976pzo.feishu.cn/wiki/SbyvwteeFiNiLRkhnABcmmZZnkb?from=from_copylink" target="_blank" rel="noreferrer">工作系数与标准库</a> 为准。页面禁止搜索引擎索引。
+    </div>
+  </footer>
+
+  <script>
+    const links = Array.from(document.querySelectorAll(".nav-links a"));
+    const sections = links
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        links.forEach((link) => {
+          const active = link.getAttribute("href") === "#" + visible.target.id;
+          link.toggleAttribute("aria-current", active);
+          if (active) link.setAttribute("aria-current", "true");
+        });
+      },
+      { rootMargin: "-20% 0px -65% 0px", threshold: [0.05, 0.2, 0.5] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    const overflow = document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    const audit = document.createElement("div");
+    audit.id = "viewport-audit";
+    audit.hidden = true;
+    audit.dataset.horizontalOverflow = String(overflow);
+    audit.dataset.viewportWidth = String(document.documentElement.clientWidth);
+    audit.dataset.scrollWidth = String(document.documentElement.scrollWidth);
+    audit.textContent = overflow ? "HORIZONTAL_OVERFLOW" : "NO_HORIZONTAL_OVERFLOW";
+    document.body.appendChild(audit);
+  </script>
+</body>
+</html>
